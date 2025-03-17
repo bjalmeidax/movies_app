@@ -1,4 +1,6 @@
+import br.com.gja.megamovies.Episodes;
 import br.com.gja.megamovies.Movies;
+import br.com.gja.megamovies.RecommendationFilter;
 import br.com.gja.megamovies.Series;
 
 import java.util.ArrayList;
@@ -50,6 +52,16 @@ public class Main {
         anotherSeries.rate(7);
         anotherSeries.rate(7);
         seriesList.add(anotherSeries);
+
+        RecommendationFilter filter = new RecommendationFilter();
+        filter.filter(myMovie);
+
+        Episodes episodes = new Episodes();
+        episodes.setNmber(1);
+        episodes.setSerie(mySeries);
+        episodes.getTotalViews(300);
+        filter.filter(episodes);
+
 
         boolean continueSearch = true;
         while (continueSearch) {
